@@ -19,3 +19,10 @@ example: md5 hash generator, sha-1 hash generator, sha-256 hash generator
 idemponent 
 
 */
+
+//ES6
+//Map Set 
+
+//map can save any types of keys not just strings. It also maintains the order of keys but keys in hash table don't have order. 
+
+//set is very similar to map. the only difference is that set only has keys not values. 
