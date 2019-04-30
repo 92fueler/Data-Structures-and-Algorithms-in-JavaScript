@@ -23,15 +23,28 @@ class MyStack1{
     return this.stack.pop();
   }
   peek(){
-    return this.stack(stack.length - 1);
+    return this.stack[this.length - 1];//here is this.length not stack.length
   }
   get length(){
     return this.stack.length;
   }
   isEmpty(){
-    return stack.length === 0;
+    return this.stack.length === 0;
   }
 }
+
+let myStack1 = new MyStack1();
+myStack1.push('apple');
+myStack1.push('banana');
+myStack1.push('peach');
+console.log(myStack1.length);
+console.log(myStack1.peek());
+myStack1.pop();
+myStack1.pop();
+myStack1.pop();
+console.log(myStack1.isEmpty());
+
+
 
 //build stack with array and closure 
 function myStack2(){
@@ -39,18 +52,20 @@ function myStack2(){
   return{
     push(item){
       return stack.push(item);
-    }
+    },
     pop(){
       return stack.pop();
-    }
+    },
     peek(){
-      return stack[stack.length - 1];
-    }
+      return stack[this.length - 1];
+    },
     get length(){
-      return stack.length
-    }
+      return stack.length;
+    },
     isEmpty(){
-      return stack.length === 0;
+      return this.length === 0;
     }
+  }
 }
+
 
