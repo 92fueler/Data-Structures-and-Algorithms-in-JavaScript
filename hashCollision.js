@@ -29,6 +29,13 @@ hash collision means assigning keys into the same address since assigning is ran
 with enough data and limited memory we cannot avoid the collision. 
 when we have collision, it slows reading and writing. 
 
+
+The hash function will depend on the range of key values and the number of buckets. 
+The idea is to try to assign the key to the bucket as uniform as you can. Ideally, a perfect hash function will 
+be one-one mapping between the key and the bucket. 
+However, in most cases a hash function is not perfect and it's a tradeoff between the amount of buckets 
+and the capacity of a bucket. 
+
 There are different ways to solve the collision.
 
 
