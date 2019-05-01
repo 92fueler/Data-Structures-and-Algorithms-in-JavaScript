@@ -37,4 +37,30 @@ create LinkedList{
     this.tail = null;
     this.length = 0;
   }
+  isEmpty(){
+    return this.length === 0; 
+  }
+  printList(){
+    const nodes = [];
+    let current = this.head;
+    while (current){
+      nodes.push(current.value);
+      current = current.next;
+    }
+    return nodes.join(' -> ');
+  }
+  push(value){
+    const node = Node(value);
+    if(this.head === null){
+      this.head = node;
+      this.tail = node;
+      this.length++;
+      return node;
+    }
+  }
 }
+
+
+
+
+
