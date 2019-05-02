@@ -24,22 +24,30 @@ Position 2 is a peak if and only if b >= a and b >= c. Position 9 is a peak if i
 Problem: find a peak if it exists. 
 */
 
+
+//straightforward algorithm --> start from left 
 /*
-straightforward algorithm --> start from left 
 worst-case complexity: scaning through all the elements --> theta n 
+
+What if we start in the middle? We would look at n/2 elements. 
+Would we have to ever look at more than n/2 elements if we start in the middle,
+and choose a direction based on which neighboring element is larger than the middle element? 
 */
 
 /*
-binary search 
-recursive algorithm --> divide and conquer 
+Can we do better? 
+binary search --> recursive algorithm --> divide and conquer 
 
 if a[n/2] < a[n/2 - 1] then only look at left half 1 ... (n/2 - 1). 
 else if a[n/2] < a[n/2 + 1] then (n/2 + 1) ... n has the peak 
 else n/2 position is a peak. 
 
 T(n) = T(n/2) + theta(1)
-base case: T(1) = theta(1)
-the work algorithm does on the input of size n 
+     = theta(1) + theta(1) + ... + theta(1) --> (lg(n) times) 
+     = theta(lg(n))
+
+base case: T(1) = theta(1) --> theta(1) means the time required to compare a[n/2] to neighbors. 
+
 
 */
 
