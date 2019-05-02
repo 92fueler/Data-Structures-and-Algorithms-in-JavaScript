@@ -25,6 +25,14 @@ and we restrict c to be a constant so that the word size doesn't grow arbitarily
 Real computers contain instructions not listed above, and such instructions represent a gray area in the RAM model. 
 
 In the RAM mode, we don't attempt to model the memory hierarchy that is common in contemporary computers. 
-That is, we do not model caches or virtual memory. 
+That is, we do not model caches or virtual memory. Several computational modesl attempt to account for 
+memory-heirarchy effects, which are sometimes significant in real programs on real machines. 
+For most of the time, we don't analyze the situation about memory-hierarchy. Models that include the 
+memory hierarchy are quite a bit more complex that the RAM model, and so they can be difficult to work with. 
+Moreover, RAM-model analyses are usually excellent predictors of performance on actual machines. 
 
+Analyzing even a simple algorthim in the RAM model can be a challenge. The mathematical tools required 
+may include combinatorics, probability theory, algebraic dexterity, and the ability to identify the most 
+significant terms in a formula. Because the behavior of an algorihm may be different for each possible input, 
+we need a means for summarizing that behavior in simple, easily understood formulas. 
 */
