@@ -36,3 +36,34 @@ may include combinatorics, probability theory, algebraic dexterity, and the abil
 significant terms in a formula. Because the behavior of an algorihm may be different for each possible input, 
 we need a means for summarizing that behavior in simple, easily understood formulas. 
 */
+
+//input size
+/*
+For many problems, such as sorting or computing discrete Fourier transforms, the most natural measure 
+is the number of items in the input - for example, the array size n for sorting. For many other problems,
+such as multiplying two integers, the best measure of input size is the total number of bits needed to 
+represent the input in the input with two numbers rather than one. 
+For instance, if the input to an algorithm is a graph, the input size can be described by the numbers 
+of vertices and edges in the graph. 
+*/
+
+//running time 
+/*
+The running time of an algorithm on a particular input is the number of primitive operations or "steps" executed. 
+In is convenient to define the notion of step so taht it is as machine-independent as possible. 
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
