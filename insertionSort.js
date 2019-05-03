@@ -33,18 +33,20 @@ Now, the sorted section is dynamic, which means it starts from one item and incr
 */
 
 function insertionSorting(arr){
- //initiation 
- let sortedArr = [];
- sortedArr.push(arr[0]); //sortedArr has one item 
- for(let i = 1; i < arr.length; i++){
-   for(let j = sortedArr.length - 1; j >= 0; j--){
-     if(sortedArr[j] > arr[i]){
-      sortedArr.push(arr[i])   
-     }
+  let sortedArr = [];
+  sortedArr.push(arr[0]); //sortedArr has one item 
+  for(let i = 1; i < arr.length; i++){
+    sortedArr.push(arr[i]);
+    for(let j = sortedArr.length - 2; j >= 0; j--){
+     if (sortedArr[j] > arr[i]){
+      sortedArr[j + 1] = sortedArr[j];
+      sortedArr[j] = arr[i];
+    }
    }
- }
+  }
+  return sortedArr;
 }
-
+ 
 
 
 
