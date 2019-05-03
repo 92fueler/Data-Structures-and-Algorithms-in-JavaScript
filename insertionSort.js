@@ -13,19 +13,39 @@ given a sorted array arr = [1, 2, 5, 9] and a value val = 4
 write a program to insert the value into the sorted array.
 */
 
-let arr = [1, 2, 5, 9];
-const val = 4;
+let array = [1, 2, 5, 9];
+const value = 4;
 
-function soring(arr, val){
-  let newArr = arr.push(val); 
-  for(let i = newArr.length - 2; i >= 0; i--){
-    if(newArr[i] > val){
-      newArr[i + 1] = arr[i];
-      newArr[i] = val;
+function sorting(arr, val){
+  arr.push(val); 
+  for(let i = arr.length - 2; i >= 0; i--){
+    if(arr[i] > val){
+      arr[i + 1] = arr[i];
+      arr[i] = val;
     }
   }
-  return newArr;
+  return arr;
 }
+
+//CONTINUE 
+/*
+Now, the sorted section is dynamic, which means it starts from one item and increments by one item from the unsorted section. 
+*/
+
+function insertionSorting(arr){
+ //initiation 
+ let sortedArr = [];
+ sortedArr.push(arr[0]); //sortedArr has one item 
+ for(let i = 1; i < arr.length; i++){
+   for(let j = sortedArr.length - 1; j >= 0; j--){
+     if(sortedArr[j] > arr[i]){
+      sortedArr.push(arr[i])   
+     }
+   }
+ }
+}
+
+
 
 
 
