@@ -39,3 +39,29 @@ the tuples cannot be changed unlike lists and tuples use parentheses, whereas li
 - field = word (eg. int) or pointer to object/null (a.k.a reference)
 - weaker than (can be implemented on )RAM 
 */
+
+//document distance problem -- compute d(D1, D2)
+/*
+The document distance problem has applications in finding similar documents, detecting duplicates (Wikipedia mirrors
+and Google) and plagiarism, and also in web search (D2 = query).
+some defintions:
+- word = sequence of alphanumeric characters 
+- document = sequence of words (ignore space, punctuation etc)
+
+The idea is to define distance in terms of shared words. Think of document D as a vector:
+D[w] = #occurrence of word W. 
+*/
+
+/*
+document distance algorithm:
+1. split each document into words 
+2. count word frequencies (document vectors)
+3. compute dot product(& divide)
+
+*/
+
+
+
+
+
+
