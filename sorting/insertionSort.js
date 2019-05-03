@@ -8,6 +8,11 @@ And, we start our sorted section at the first item --> an array of a single item
 insertion means insert one item from the unsorted section into the sorted section. 
 */
 
+//running time
+/*
+theta(n^2) 
+*/
+
 /*
 given a sorted array arr = [1, 2, 5, 9] and a value val = 4
 write a program to insert the value into the sorted array.
