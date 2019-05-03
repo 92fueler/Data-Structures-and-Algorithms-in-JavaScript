@@ -44,36 +44,50 @@ function insertionSorting(arr){
     }
    }
   }
+  console.log(arr);
   return sortedArr;
 }
+
+const list =  [54, 26, 93, 17, 77, 31, 44, 55, 20];
+console.log(insertionSorting(list));
  
 
+//The program as above works well. but the problem is that it creates a new array, which means more memory space is required. 
 
+//how to improve? moving around the items within the given array 
 
+//CONTINUE 
+
+//The below is the qesudocode from CLRS 
 
 /*
 INSERTION-SORT(A)
-for j = 2 to A.length
-  key = A[j] //insert A[j] into the sorted sequence A[1 ... j-1]
-  i = j - 1
-  while i > 0 and A[i] > key
-    A[i + 1] = A[i]
-    i = i - 1
-  A[i + 1] = key 
+for i = 1 to A.length
+  val = A[i] //insert A[i] into the sorted sequence A[1, ..., i-1] + A[i] 
+  j = i - 1; //sorted section 
+  while j > 0 and A[j] > val
+    A[j + 1] = A[j]
+    j = j - 1
+  A[j + 1] = val
 */
 
 function insertionSort(arr){
-  for (let j = 1; j < arr.length;  j++){
-    let key = arr[j];
-    let i = j - 1;
-    while (i > 0 && arr[i] > key){
-      arr[i + 1] = arr[i];
-      i--;
-    }
-    arr[i + 1] = key;
+ for (let i = 1; i > arr.length; i++){
+  let val = arr[i];
+  let j = i - 1;
+  while( j >= 0 && arr[j] > val){
+   arr[j + 1] = arr[j];
+   j--;
   }
-  return arr;
+  arr[j] = val;
+ }
+ return arr;
 }
 
-const arr = [11, 3, 45, 67, 2, 1, 40, 90, 23];
+const list =  [54, 26, 93, 17, 77, 31, 44, 55, 20];
+console.log(insertionSort(list));
+
+
+
+
 
