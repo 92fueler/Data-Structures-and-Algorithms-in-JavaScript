@@ -46,3 +46,58 @@ var list = [
   }
 ]
 
+
+//creating objects.
+//1. using object initializers 
+const obj = {
+ firstName: 'Bill',
+ lastName: 'Woo',
+ isMarried: false,
+ greeting: function(){
+  console.log('I am ' + firstName + ' ' + lastName + '.'); 
+ }
+}
+  
+/*
+From here, we can access the properties and methods; also, we can add and delete them as well. 
+*/
+obj.firstName;
+obj.greeting;
+obj.graduated = true;
+obj.marriage = function(){
+  console.log('I want to get married!');
+}; 
+delete obj.firstName; //true 
+delete obj.fullName; //true  --> for the properties that are not in obj, still return true 
+
+/*
+delete operator in JS has nothing to do with directly freeing memory. 
+Memory management is done indirectly by breaking references. 
+*/
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
