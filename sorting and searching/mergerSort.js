@@ -55,5 +55,54 @@ MERGE-SORT(A, p, r)
     MERGE-SORT(A, p, q, r) 
 */
 
+function merge(arr, p, q, r){
+  let numOne = q - p + 1,
+      numTwo = r - q;
+  let leftArr = new Array(numOne),
+      rightArr = new Array(numTwo);
+  let sentinel; 
+ 
+  for (let i = 0; i < numOne - 1; i++){
+   leftArr[i] = arr[p + i - 1];
+  }
+  for (let j = 0; j < numTwo - 1; j++){
+    rightArr[j] = arr[q + j]; 
+  }
+  leftArr[numOne + 1] = sentinel;
+  rightArr[numTwo + 1] = sentinel; 
+  i = 1;
+  j = 1; 
+  for (let k = p; k < r+1; k++){
+    if(leftArr[i] <= rightArr[j]){
+     arr[k] = leftArr[i];
+     i++;
+    }else{
+     arr[k] = rightArr[j];
+     j++;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
