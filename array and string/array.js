@@ -1,4 +1,5 @@
 //array 
+//In JS, we can put every type of inputs in array but it's not recommended. 
 
 /*
 lookup  o(1)
@@ -25,3 +26,6 @@ strings.shift();
 
 //splice - join the ends of two pieces of array to be a new array 
 strings.splice(2, 0, 'alien'); //o(n) 
+
+//concat 
+strings.concat(['f', 'g']); --> //we didn't assign it to a new variable, it didn't update the original array 
