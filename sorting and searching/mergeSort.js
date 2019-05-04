@@ -1,4 +1,4 @@
-//merger sort 
+//merge sort 
 //divide-and-conquer 
 
 /*
@@ -60,7 +60,8 @@ function merge(arr, p, q, r){
       numTwo = r - q;
   let leftArr = new Array(numOne),
       rightArr = new Array(numTwo);
-  let sentinel; 
+  let sentinel1,
+      sentinel2;
  
   for (let i = 0; i < numOne - 1; i++){
    leftArr[i] = arr[p + i - 1];
@@ -68,10 +69,10 @@ function merge(arr, p, q, r){
   for (let j = 0; j < numTwo - 1; j++){
     rightArr[j] = arr[q + j]; 
   }
-  leftArr[numOne + 1] = sentinel;
-  rightArr[numTwo + 1] = sentinel; 
-  i = 1;
-  j = 1; 
+  leftArr[numOne + 1] = sentinel1;
+  rightArr[numTwo + 1] = sentinel2; 
+  i = 0;
+  j = 0; 
   for (let k = p; k < r+1; k++){
     if(leftArr[i] <= rightArr[j]){
      arr[k] = leftArr[i];
@@ -81,9 +82,11 @@ function merge(arr, p, q, r){
      j++;
     }
   }
+ return arr;
 }
 
-
+let array = [2, 4, 5, 7, 1, 2, 3, 6];
+let p = 3, q = 6, r = 10;
 
 
 
