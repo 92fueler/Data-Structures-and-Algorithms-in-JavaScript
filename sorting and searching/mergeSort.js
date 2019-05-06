@@ -68,22 +68,20 @@ function merge(arr, p, q, r){
   }
   i = 0;
   j = 0; 
-  while(i < numOne
-    
-    
-    
-  for (let k = p; k < r+1; k++){
-    if(leftArr[i] <= rightArr[j]){
-     arr[k] = leftArr[i];
-     i++;
-    }else{
-     arr[k] = rightArr[j];
-     j++;
+  while (i <= numOne || j <= numTwo){
+    for (let k = p; k < r+1; k++){
+      if(leftArr[i] < rightArr[j]){
+        arr[k] = leftArr[i];
+        i++;
+      }else{
+        arr[k] = rightArr[j];
+        j++;
+      }
     }
   }
  return arr;
 }
-
+    
 let array = [2, 4, 5, 7, 1, 2, 3, 6];
 let p = 3, q = 6, r = 10;
 
