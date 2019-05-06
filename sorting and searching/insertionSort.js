@@ -1,5 +1,6 @@
 //insertion sort 
 
+
 //How to think of this algorithm?
 /*
 The way it works is that it splits the array into two sections - a sorted and an unsorted one. 
@@ -77,6 +78,14 @@ for j = 2 to A.length
   A[i + 1] = key 
 */
 
+/*
+Time complexity: 
+comparison and swaping for numbers have exactly the same cost. 
+But if you had a record and you were comparing records, and the comparison function that you used for the records 
+was in itself a method call or a subroutine, it's quite possible that all you're doing is swaping pointers or 
+references to do the swap, but the comparison could be subtantially more expensive. 
+*/
+
 function insertionSort(arr){
   for (let j = 1; j < arr.length; j++){
     let key = arr[j];
@@ -93,6 +102,11 @@ function insertionSort(arr){
 const list =  [54, 26, 93, 17, 77, 31, 44, 55, 20];
 console.log(insertionSort(list));
 
+/*
+What if we do the binary search on the sorted section? 
+It's called insertion binary sort. 
+
+*/
 
 
 
