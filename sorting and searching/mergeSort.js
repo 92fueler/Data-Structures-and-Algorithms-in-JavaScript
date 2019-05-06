@@ -1,5 +1,8 @@
 //merge sort 
 //divide-and-conquer 
+/*
+It's a standard recursion algorithm --> recursive algorithm - similar to a binary search 
+*/
 
 /*
 divide: divide the n=element sequence to be sorted into two subsequences of n/2 elements each 
