@@ -58,25 +58,25 @@ MERGE-SORT(A, p, r)
 function merge(arr, p, q, r){
   let numOne = q - p + 1,
       numTwo = r - q;
-  let leftArr = new Array(numOne),
-      rightArr = new Array(numTwo);
-  for (let i = 0; i < numOne - 1; i++){
+  let leftArr = new Array(numOne + 1),
+      rightArr = new Array(numTwo + 1);
+  for (let i = 0; i < numOne; i++){
    leftArr[i] = arr[p + i];
   }
-  for (let j = 0; j < numTwo - 1; j++){
+  for (let j = 0; j < numTwo; j++){
     rightArr[j] = arr[q + j + 1]; 
   }
-  i = 0;
-  j = 0; 
-  while (i <= numOne || j <= numTwo){
-    for (let k = p; k < r+1; k++){
-      if(leftArr[i] < rightArr[j]){
-        arr[k] = leftArr[i];
-        i++;
-      }else{
-        arr[k] = rightArr[j];
-        j++;
-      }
+  leftArr[numOne] = 9999;
+  rightArr[numTwo] = 9999;
+  let i = 0;
+  let j = 0; 
+  for (let k = p; k < r+1; k++){
+    if(leftArr[i] <= rightArr[j]){
+      arr[k] = leftArr[i];
+      i++;
+    }else{
+      arr[k] = rightArr[j];
+      j++;
     }
   }
  return arr;
