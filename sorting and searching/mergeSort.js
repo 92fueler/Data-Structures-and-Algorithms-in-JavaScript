@@ -60,13 +60,11 @@ function merge(arr, p, q, r){
       numTwo = r - q;
   let leftArr = new Array(numOne),
       rightArr = new Array(numTwo);
-
- 
   for (let i = 0; i < numOne - 1; i++){
-   leftArr[i] = arr[p + i - 1];
+   leftArr[i] = arr[p + i];
   }
   for (let j = 0; j < numTwo - 1; j++){
-    rightArr[j] = arr[q + j]; 
+    rightArr[j] = arr[q + j + 1]; 
   }
   i = 0;
   j = 0; 
