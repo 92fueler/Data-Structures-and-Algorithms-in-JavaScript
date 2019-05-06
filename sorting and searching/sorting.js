@@ -18,7 +18,7 @@ How do we do it efficiently?
 //why sorting?
 /*
 - obvious applications 
-  for example: organize an MP3 library, maintain a telephone directory 
+  for example: phone book, organize an MP3 library, maintain a telephone directory 
 - problems that become easy once items are in sorted order 
   for example: find a median, or find closest pairs; binary search, identify statistical outliers 
 - non-obvious applications 
@@ -29,9 +29,19 @@ How do we do it efficiently?
 /*
 binary serach: 
 A[0:n] --> looking for a specific item 
+it uses lagorithmic time 
 
 not obvious sorting problem:
-data compression
+data compression: people use sorting as a subroutine in data compression. 
+
+computer graphics uses sorting. Most of the time, when you render scenes in computer graphics, you have many layers corresponding
+to the scenes. It turns out that, in computer graphics, most of the time you're actually rendering front to back  because,
+when you have a big opaque object in front, you want to render that first, so you don't have to worry about everything that's occluded 
+by this big opaque object. And that makes things more efficient. And so you keep things sorted front to back, most of the time,
+in computer graphics rendering. 
+But some of the time, if you're worried about transparency, you have to render things back to front. So typically, you have sorted
+lists corresponding to the different objects in both orders - both  increasing order and decreasing order. 
+
 other sorting problems for example: cocktail sort, bitonic sort 
 */
 
