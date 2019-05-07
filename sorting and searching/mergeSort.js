@@ -58,6 +58,7 @@ MERGE-SORT(A, p, r)
     MERGE-SORT(A, p, q, r) 
 */
 
+//two sorted arrays as the input 
 function merge(arr, p, q, r){
   let numOne = q - p + 1,
       numTwo = r - q;
