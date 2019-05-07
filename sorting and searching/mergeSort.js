@@ -66,6 +66,7 @@ function merge(arr, p, q, r){
   for (let i = 0; i < numOne; i++){
    leftArr[i] = arr[p + i];
   }
+
   for (let j = 0; j < numTwo; j++){
     rightArr[j] = arr[q + j + 1]; 
   }
@@ -87,7 +88,6 @@ function merge(arr, p, q, r){
     
 let array = [2, 4, 5, 7, 1, 2, 3, 6];
 let p = 3, q = 6, r = 10;
-
 
 
 
