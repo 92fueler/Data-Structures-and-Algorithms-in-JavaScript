@@ -1,4 +1,10 @@
 //insertion sort 
+// what is the advantage of insertion sort over merge sort? 
+/*
+merge sort 
+theta(n) auxiliary space 
+in-place sort => theta(1) auxiliary space 
+*/
 
 
 //How to think of this algorithm?
