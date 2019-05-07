@@ -4,6 +4,7 @@
 /*
 Algorithmic thinking is all about efficient procedures for solving problems on large inputs. 
 
+
 some fair exmaple of large inputs are 
 US highway system 
 human genome which has billions of letters in its alphabet 
