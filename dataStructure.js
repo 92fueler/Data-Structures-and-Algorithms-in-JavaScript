@@ -9,18 +9,22 @@ speed: time complexity
 1. how to build one 
 2. how to use it 
 */
+
+
 //How computers store data? 
 /*
 CPU, RAM, Storage 
+
 Data structures: 
 arrays 
 stacks 
 queues 
-linked l ists 
+linked lists 
 trees 
 tries 
 graphs 
 hash tables 
+
 Algorithms:
 sorting
 dynamic programming 
