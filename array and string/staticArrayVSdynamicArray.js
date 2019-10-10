@@ -1,5 +1,13 @@
 //static array vs dynamic array
 
+//static array --> the size is fixed --> you have to specify the size ahead of time 
+
+//dynamic array 
+/*
+It allows us to copy and rebuild the array at a new location which with more memory 
+if we want more memory. 
+*/
+
 /*
 dynamic array 
 lookup 
