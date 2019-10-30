@@ -24,7 +24,7 @@ Context tells you where we are within the object.
 */
 
 function(){
-  let a = a; 
+  let a = 1; 
 }
 
 console.log(a); //Uncaught reference error 
@@ -38,11 +38,23 @@ class Player{
     this.name = name;
     this.type = type;
   }
-  introduce(){ //method 
+  introduce(){ //a method 
     console.log(`Hi I am ${this.name}, I'm a ${this.type}.`);
   }
 }
 
 class Wizard extends Player{
-
+  constructor(name, type){
+    super(name, type)
+  }
+  play(){
+   console.log(`WEEEEEE I'm a ${this.type}`);
+  }
 }
+/*
+Every time we use extend, we have to call the constructor function 
+*/
+
+const wizard1 = new Wizard('Shelly', 'Healer');
+const wizard2 = new Wizard('Shawn', 'Dark Magic');
+//new --> create a new instance 

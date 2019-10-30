@@ -28,4 +28,4 @@ strings.shift();
 strings.splice(2, 0, 'alien'); //o(n) 
 
 //concat 
-strings.concat(['f', 'g']); --> //we didn't assign it to a new variable, it didn't update the original array 
+strings.concat(['f', 'g']); //--> we didn't assign it to a new variable, it didn't update the original array 
