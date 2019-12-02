@@ -1,10 +1,10 @@
 //merge two arrays into one sorted array 
 
-function mergeSortedArray(array1, array2){
+function mergeSortedArrays(array1, array2){
   const mergedArray = [];
   let array1Item = array1[0];
   let array2Item = array2[0];
-  let i = i;
+  let i = 1;
   let j = 1;
   
   //check input 
@@ -21,8 +21,7 @@ function mergeSortedArray(array1, array2){
       mergedArray.push(array1Item);
       array1Item = array1[1];
       i++;
-    }
-  }else{
+    }else{
     mergedArray.push(array2Item);
     array2Item = array2[j];
     j++;
