@@ -2,6 +2,14 @@
 //In JS, we can put every type of inputs in array but it's not recommended. 
 
 /*
+Arrays consist of;
+--> a length --> integer --> can be changed or not! 
+--> a sequence of N memory boxes where N = length
+    (1) all of the boxes hold the same type of value (and have same # of bits) --> not necessary but it's better to create an array like this. 
+    (2) the boxes are numbered 0 through length - 1 
+*/
+
+/*
 lookup  o(1)
 push  o(1)
 insert  o(n)
@@ -22,7 +30,7 @@ strings.pop();
 strings.unshift('0'); //o(n) --> why not o(1)? 
 
 //shift - delete at the beginning of the array 
-strings.shift(); 
+strings.shift();
 
 //splice - join the ends of two pieces of array to be a new array 
 strings.splice(2, 0, 'alien'); //o(n) 
