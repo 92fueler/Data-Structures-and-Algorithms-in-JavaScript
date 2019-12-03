@@ -1,5 +1,7 @@
 //object in JavaScript is hash table
 
+//the most common interview questions are about hash table. 
+
 
 /*
 hash function 
@@ -21,12 +23,22 @@ insert --> o(1)
 delete --> o(1)
 search --> o(1) 
 
-cons:
+
 hash collision 
 --> limited space and lots of data --> cannot avoid collision 
 
-two common ways: 
-1. linked list 
-2. 
+pros:
+1. fast lookup --> good collision resolution 
+  (however, we don't need to worry about this, because our programming lanuages in computer underneath the hood take 
+  care of it for us)
+2. fast inserts --> depends on the type of hash tables such as maps in JS 
+3. flexible keys 
+
+cons:
+1. unordered --> hard to go through everything in order 
+2. slow key iteration 
+
+
+
 */
 
