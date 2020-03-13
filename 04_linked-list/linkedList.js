@@ -95,7 +95,24 @@ function LinkedList() {
   this.insert = function(position, data) {
     // if position < 0 or position > this.length 
       // return false 
-    // if position 
+      if (position < 0 || position > this.length) {
+        return false;
+      }
+
+      var newNode = new Node(data);
+
+      if (position === 0) {
+        var current = this.head;
+        current.next = newNode;
+      } else {
+        var count = 0; 
+        while (count < position) {
+          var current = this.head;
+          current = current.next;
+          count += 1;
+        }
+        
+      }
   }
 }
 
