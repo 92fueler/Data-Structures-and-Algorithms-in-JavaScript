@@ -29,52 +29,75 @@ A node has two pieces of information:
 - the value of the node 
 */
 
-function Node(value){
-  return{
-    value,
-    next: null
-  }
-}
-
-//create a list of nodes 
 /*
-push(value)
-pop()
-delete(index)
+methods:
+append(element)
+insert(position, element)
+get(position)
+indexOf(element)
+update(position)
+removeAt(position)
+remove(element)
 isEmpty()
-printList()
+toString()
 */
 
-class LinkedList{
-  constructor(){
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
+function LinkedList() {
+  //封装节点类
+  function Node(data) {
+    this.data = data;
+    this.next = null;
   }
-  isEmpty(){
-    return this.length === 0; 
+
+  //property
+  this.head = null;
+  this.length = 0;
+
+  //append 
+  // if there is no node 
+    // then append 
+  // else if there are some nodes ahead 
+    // previousNode.next = node and node.next = nextNode 
+  this.append = function(data) {
+    var newNode = new Node(data);
+
+    if (this.length === 0) {
+      this.head = newNode;
+    } else {
+      var current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = newNode;
+    }
+    this.length += 1;
   }
-  printList(){
-    const nodes = [];
-    let current = this.head;
-    while (current){
-      nodes.push(current.value);
+
+  //toString
+  // we can use this method to test the rest of the methods 
+  // by printing them out 
+  this.toString = function() {
+    var current = this.head;
+    var result = '';
+    while (current) {
+      result += ' ' + current.data;
       current = current.next;
     }
-    return nodes.join(' -> ');
+    return result;
   }
-  push(value){
-    const node = Node(value);
-    if(this.head === null){
-      this.head = node;
-      this.tail = node;
-      this.length++;
-      return node;
-    }
+
+  this.size = function() {
+    return this.length;
+  }
+
+
+  // insert 
+  this.insert = function(position, data) {
+    // if position < 0 or position > this.length 
+      // return false 
+    // if position 
   }
 }
-
-
 
 
 
