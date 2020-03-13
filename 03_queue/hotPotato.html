@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>hot potato game</title>
+    </head>
+    <body>
+        <p>
+            An example of a circular queue is the Hot Potato game. <br>
+            In this game, children are organized in a circle. <br>
+            Before the game starts, they determine a number - num, <br>
+            and they pass the hot potato to their neighbor <br>
+            and the hot potato stops being passed at the num-th child. <br>
+            This num-th child will be removed from this game. <br>
+            <br>
+            This action is repeated until there is only one child left. <br>
+            And, that is the winner for this game. 
+        </p>
+
+        <script src="queue.js"></script>
+        <script>
+            var hotPotato = function(children, num) {
+                var queue = new Queue();
+                for (var i = 0; i < children.length; i++) {
+                    queue.enqueue(children[i]);
+                }
+
+                while(queue.size() > 1) {
+                    for (var i = 0; i < num; i++) {
+                        queue.enqueue(queue.dequeue());
+                    }
+                    queue.dequeue();
+                }
+
+                alert(queue.size());
+                var endName = queue.dequeue();
+                alert('winner is ' + endName);
+
+                return children.indexOf(endName);
+            
+            }
+
+            var children = ['Lucy', 'Tom', 'Mark', 'Sunny', 'John', 'Rachel', 'Monica', 'Sophia'];
+            var num = 4;
+            hotPotato(children, num);
+
+        </script>
+    </body>
+</html>

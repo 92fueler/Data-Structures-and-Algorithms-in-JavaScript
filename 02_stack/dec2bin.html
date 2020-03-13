@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>convert decimal number to binary</title>
+    </head>
+    <script src="stack.js"></script>
+
+    <script>
+        function dec2bin(decNum) {
+            var binStr = '';
+            var stack = new Stack();
+
+            while (decNum > 0) {
+                stack.push(decNum % 2);
+                decNum = Math.floor(decNum / 2);
+            }
+
+            while(!stack.isEmpty()) {
+                binStr += stack.pop();
+            }
+
+            return binStr;
+        }
+
+        alert(dec2bin(100));
+    </script>
+</html>
