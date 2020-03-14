@@ -177,17 +177,18 @@ function LinkedList() {
   }
 
   //remove --> input: position 
-  this.remove = function(position) {
+  this.removeAt = function(position) {
     if (position < 0 || position >= this.length) {
       return false;
     }
 
-
+    //it's better to declare current outside the if-else statement
+    //because we want to return current.data in the end 
+    var current = this.head;
 
     if (position === 0) {
       this.head = this.head.next;
     } else {
-      var current = this.head;
       var previous = null;
       var index = 0;
 
@@ -197,12 +198,22 @@ function LinkedList() {
         index += 1;
       }
       previous.next = current.next;
-      delete current;
-      this.length -= 1;
-      return true;
-  
     }
+    this.length -= 1;
+    return current.data;
+  }
 
+  this.remove = function(data) {
+    var position = this.indexOf(data);
+    return this.removeAt(position);
+  }
+
+  this.isEmpty = function() {
+    return this.length === 0;
+  }
+
+  this.size = function() {
+    return this.length;
   }
 
 }
