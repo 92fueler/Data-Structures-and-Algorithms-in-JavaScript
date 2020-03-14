@@ -146,6 +146,22 @@ function LinkedList() {
     return current.data;
   }
 
+  //indexOf 
+  this.indexOf = function(data) {
+    var current = this.head;
+    var index = 0;
+
+    while (current) {
+      if (current.data === data) {
+        return index;
+      }
+      current = current.next;
+      index += 1;
+    }
+
+    return -1;
+  }
+
 }
 
 
