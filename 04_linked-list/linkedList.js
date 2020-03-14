@@ -182,18 +182,26 @@ function LinkedList() {
       return false;
     }
 
-    var current = this.head;
-    var previous = null;
-    var index = 0;
 
-    while (index < position) {
-      previous = current;
-      current = current.next;
-      index += 1;
+
+    if (position === 0) {
+      this.head = this.head.next;
+    } else {
+      var current = this.head;
+      var previous = null;
+      var index = 0;
+
+      while (index < position) {
+        previous = current;
+        current = current.next;
+        index += 1;
+      }
+      previous.next = current.next;
+      delete current;
+      this.length -= 1;
+      return true;
+  
     }
-    previous.next = current.next;
-    delete current;
-    return true;
 
   }
 
