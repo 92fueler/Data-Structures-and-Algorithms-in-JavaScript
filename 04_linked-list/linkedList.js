@@ -146,7 +146,7 @@ function LinkedList() {
     return current.data;
   }
 
-  //indexOf 
+  //indexOf --> input: data and return the position info 
   this.indexOf = function(data) {
     var current = this.head;
     var index = 0;
@@ -158,8 +158,43 @@ function LinkedList() {
       current = current.next;
       index += 1;
     }
-
     return -1;
+  }
+
+  //update --> input data & position, to update the node, return boolean value 
+  this.update = function(position, newData) {
+    if (position < 0 || position >= this.length) {
+      return false;
+    }
+
+    var current = this.head;
+    var index = 0;
+    while (index < position) {
+      current = current.next;
+    }
+    current.data = newData;
+    return true;
+  }
+
+  //remove --> input: position 
+  this.remove = function(position) {
+    if (position < 0 || position >= this.length) {
+      return false;
+    }
+
+    var current = this.head;
+    var previous = null;
+    var index = 0;
+
+    while (index < position) {
+      previous = current;
+      current = current.next;
+      index += 1;
+    }
+    previous.next = current.next;
+    delete current;
+    return true;
+
   }
 
 }
