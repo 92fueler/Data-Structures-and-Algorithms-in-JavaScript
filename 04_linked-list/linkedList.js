@@ -102,16 +102,30 @@ function LinkedList() {
       var newNode = new Node(data);
 
       if (position === 0) {
-        var current = this.head;
-        current.next = newNode;
+        newNode.next = this.head;
+        this.head = newNode;
       } else {
+        // travel to the right position
+        //if position = 3, that means inserting the new node after the secondNode and before the thirdNode
+          /*
+            count = 0, current = head, previous = null
+            count = 1, current = firstNode, previous = head 
+            count = 2, current = secondNode, previous = firstNode 
+            count = 3, current = thirdNode, previous = secondNode 
+          */
         var count = 0; 
+        var current = this.head;
+        var previous = null;
         while (count < position) {
-          var current = this.head;
+          previous = current;
           current = current.next;
           count += 1;
         }
-        
+        newNode.next = current;
+        previous.next = newNode;
+
+        this.length += 1;
+        return true;
       }
   }
 }
