@@ -128,6 +128,24 @@ function LinkedList() {
         return true;
       }
   }
+
+  //get 
+  this.get = function(position) {
+    //position cannot be equal to length 
+    if (position < 0 || position >= this.length) {
+      return null;
+    }
+
+    //if position = 3, that means getting the thirdNode 
+    var current = this.head;
+    var count = 0;
+    while (count < position) {
+      current = current.next;
+      count += 1;
+    }
+    return current.data;
+  }
+
 }
 
 
