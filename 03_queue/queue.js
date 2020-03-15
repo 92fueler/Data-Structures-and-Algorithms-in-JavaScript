@@ -23,5 +23,13 @@ class Queue {
         this.size = function() {
             return this.items.length;
         }
+
+        this.toString = function() {
+            var result = '';
+            for (var i = 0; i < this.items.length; i++) {
+                result += this.items[i] + ' ';
+            }
+            return result;
+        }
     }
 }
