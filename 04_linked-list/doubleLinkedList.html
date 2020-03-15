@@ -14,18 +14,40 @@
             dll.append('cba');
             dll.append('nba');
 
-            //test toString(), forwardString(), backwardString() 
-            alert(dll.forwardString());
-            alert(dll.backwardString());
+            // //test toString(), forwardString(), backwardString() 
+            // alert(dll.forwardString());
+            // alert(dll.backwardString());
 
             //test insert()
             dll.insert(0, 'aaa');
             dll.insert(4, 'bbb');
             dll.insert(2, 'ccc');
-            alert(dll.toString());
-            alert(dll.size());
+            // alert(dll.toString());
+            // alert(dll.size());
 
-            //test get()
+            // //test get()
+            // alert(dll.get(0));
+            // alert(dll.get(2));
+            // alert(dll.get(5));
+
+            // //test indexOf() 
+            // alert(dll.indexOf('aaa'));
+            // alert(dll.indexOf('abc'));
+            // alert(dll.indexOf('nba'));
+
+            dll.update(0, '0-newData');
+            dll.update(4, '4-anotherData')
+            alert(dll.toString());
+
+            // dll.removeAt(0);
+            // alert(dll.toString());
+
+            alert(dll.remove('abc'));
+            alert(dll.toString());
+
+            alert(dll.getHead());
+            alert(dll.getTail());
+
         </script>
     </body>
 </html>

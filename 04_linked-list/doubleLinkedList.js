@@ -34,11 +34,11 @@ function DoublyLinkedList() {
     /*
     append(element)
     insert(position, element)
-    get（position)
-    indexOf(element)
-    update(position, element)
-    removeAt(position)
-    remove(element)
+    get（position) 获取对应位置的元素
+    indexOf(element) 返回元素在列表中的索引，如果列表中没有该元素，则返回-1 
+    update(position, element) 修改某个位置的元素
+    removeAt(position) 从列表的特定位置移除意向
+    remove(element) 从列表中移除一项
     isEmpty()
     size()
     toString() 让其只输出元素的值
@@ -153,5 +153,95 @@ function DoublyLinkedList() {
         }
         return current.data;
     }
-}
 
+    this.indexOf = function(data) {
+        var current = this.head;
+        var index = 0;
+
+        while (current) {
+            if (current.data === data) {
+                return index;
+            }
+            current = current.next;
+            index += 1;
+        }
+        return -1;
+    }
+
+    this.update = function(position, newData) {
+        if (position < 0 || position >= this.length) {
+            return null;
+        }
+
+        //if position < Math.floor(position/2)
+            //then scan from the head 
+        //if position > Math.floor(position/2)
+            //then scan from the tail 
+
+        var half = Math.floor(this.length / 2);
+        if (position <= half) {
+            var index = 0;
+            var current = this.head;
+            while (index < position) {
+                current = current.next;
+                index += 1;
+            }
+            current.data = newData;
+        } else {
+            var index = this.length - 1;
+            var current = this.tail;
+            while (position < index) {
+                current = current.prev;
+                index -= 1;
+            }
+            current.data = newData;
+        }
+        return true;  
+    }
+
+    //removeAt方法
+    this.removeAt = function(position) {
+        if (position < 0 || position >= this.length) {
+            return null;
+        }
+
+        var current = this.head;
+
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            if (position === 0) {
+                this.head.next.prev = null;
+                this.head = this.head.next;
+            } else if (position === this.length - 1) {
+                current = this.tail;
+                this.tail.prev.next = null;
+                this.tail = this.tail.prev;
+            } else {
+                var index = 0;
+                while (index < position) {
+                    current = current.next;
+                    index += 1;
+                }
+                current.prev.next = current.next;
+                current.next.prev = current.prev;
+            }
+        }
+        this.length -= 1;
+        return current.data;
+    }
+
+    this.remove = function(data) {
+        var index = this.indexOf(data);
+        return this.removeAt(index);
+    }
+
+    this.getHead = function(){
+        return this.head.data;
+    }
+
+    this.getTail = function(){
+        return this.tail.data;
+    }
+}
