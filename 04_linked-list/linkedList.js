@@ -80,7 +80,7 @@ function LinkedList() {
     var current = this.head;
     var result = '';
     while (current) {
-      result += ' ' + current.data;
+      result += '' + current.data;
       current = current.next;
     }
     return result;

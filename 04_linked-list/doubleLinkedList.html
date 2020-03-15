@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html LANG="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>testing for doubly linked list</title>
+    </head>
+    <body>
+        <script src="doubleLinkedList.js"></script>
+        <script>
+            var dll = new DoublyLinkedList();
+
+            //test append()
+            dll.append('abc');
+            dll.append('cba');
+            dll.append('nba');
+
+            //test toString(), forwardString(), backwardString() 
+            alert(dll.forwardString());
+            alert(dll.backwardString());
+
+            //test insert()
+            dll.insert(0, 'aaa');
+            dll.insert(4, 'bbb');
+            dll.insert(2, 'ccc');
+            alert(dll.toString());
+            alert(dll.size());
+
+            //test get()
+        </script>
+    </body>
+</html>
