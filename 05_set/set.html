@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Set</title>
+    </head>
+    <body>
+        <!---
+            几乎每种编程语言中，都有集合结构
+            集合比较常见的实现方式是哈希表
+
+            集合通常是由一组无序的，不能重复的元素构成
+            1. 和数学中的集合名词比较相似，但是数学中的集合范围更大一些，也允许集合中的元素重复
+            2. 在计算机中，集合通常表示的结构中元素是不允许重复的
+
+            2011年6月份发布的ES5中已经包含了Array类
+            2015年6月份发布的ES6中包含了Set类，所以其实我们可以不封装，直接使用它
+            但是，为了明确集合的内部实现机制，我们这里还是自己来封装一下Set类
+
+            add(value) 
+            remove(value)
+            has(value) 如果值在集合中，返回true, 否则返回false 
+            clear()
+            size()
+            values()
+        -->
+
+        <script src="set.js"></script>
+        <script>
+            var set = new Set();
+            alert(set.add('a'));
+            alert(set.add('b'));
+            alert(set.add('c'));
+            alert(set.add('d'));
+            alert(set.add('e'));
+            alert(set.values());
+
+            alert(set.remove('e'));
+            alert(set.remove('e'));
+            alert(set.values());
+
+            alert(set.size());
+            set.clear();
+            alert(set.size());
+        </script>
+    </body>
+</html>
+
+
+
