@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="en">
+        <title>reverse the singly linked list</title>
+    </head>
+    <body>
+        <script>
+            /*
+            Given the head of a Singly Linked Lis, reverse the linked list. 
+            Write a function to return the new head of the reversed linked list. 
+            original: head -> 2 -> 4 -> 6 -> 8 -> 10 -> null
+            return: null <- 2 <- 4 <- 6 <- 8 <- 10 <- head 
+            */
+
+            class Node {
+                constructor(value, next = null) {
+                    this.value = value;
+                    this.next = next;
+                }
+                
+                get_list() {
+                    let result = '';
+                    let temp = this;
+                    wile (temp !== null) {
+                        result += temp.value + '';
+                        temp = temp.next;
+                    }
+                    return result;
+                }
+            }
+
+            const reverse = function (head) {
+                //TODO: WRITE YOUR CODE HERE 
+                let current = head,
+                    prev = null;
+                
+                while (current != null){
+                    next = current.next;
+
+                    next.prev = current;
+                    current.prev = null;
+                    current = current.next;
+                }
+
+                return head;
+            }
+
+            head = new Node(2);
+            head.next = new Node(4);
+            head.next.next = new Node(6);
+            head.next.next.next = new Node(8);
+            head.next.next.next.next = new Node(10);
+
+            alert(`Node of original LinkedList are: ${head.get_list()}`);
+            alert(`Node of reversed LinkedList are: ${reverse(head).get_list()}`);
+        </script>
+    </body>
+</html>
