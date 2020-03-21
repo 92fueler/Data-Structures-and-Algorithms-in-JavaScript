@@ -16,7 +16,7 @@
                 this.limit = 7;　//数组的长度　
 
                 // hash function 
-                HashTable.prototype.hashFunc(str, size) {
+                HashTable.prototype.hashFunc = function (str, size){
                     //1. 定义hashCode变量
                     var　hashCode = 0;
                     //2. 霍纳算法
@@ -31,7 +31,7 @@
                 // methods 
                 // insert and edit method 
                 HashTable.prototype.put = function(key, value){
-                    
+
                 }
 
             }   
