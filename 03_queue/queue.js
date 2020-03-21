@@ -11,7 +11,6 @@ class Queue {
             return this.items.shift();
         }
 
-
         this.peek = function() {
             return this.items[0];
         }
