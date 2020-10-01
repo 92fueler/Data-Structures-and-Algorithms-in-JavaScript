@@ -12,9 +12,6 @@
  */
 
 // CLARIFICATION 
-/*
-
-*/
 
 // POSSIBLE SOLUTIONS
 // 1. recursion
