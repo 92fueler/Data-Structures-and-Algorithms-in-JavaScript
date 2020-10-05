@@ -9,6 +9,9 @@
  * review: 10/04/2020
  */
 
+// CLARIFICATION
+// Confusued why the returned value is an interger not an array? 
+
 // FUNCTION DEFINITION
 // approach: two pointer: anchor and explorer
 var removeDuplicates = function (nums) {

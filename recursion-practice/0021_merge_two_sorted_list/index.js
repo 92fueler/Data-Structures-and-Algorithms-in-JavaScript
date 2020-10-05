@@ -5,6 +5,9 @@
  * example:
  * Input: 1 -> 2 -> 4, 1 -> 3 -> 4
  * output: 1 -> 1 -> 2 -> 3 -> 4 -> 4
+ * 
+ * timestamp: 
+ * review: 10/04/2020
  */
 
 // FUNCTION DEFINITION
@@ -17,6 +20,7 @@ const ListNode = require('../../models/singly-linked-list-node');
 
 // approach 1: recursion
 var mergeTwoLists = function (l1, l2) {
+  if (!l1 && !l2) return new ListNode;
   if(!l1 || !l2) return l1 || l2
   if(l1.val < l2.val){
       l1.next = mergeTwoLists(l1.next, l2)
